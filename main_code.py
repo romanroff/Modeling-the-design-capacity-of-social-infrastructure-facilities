@@ -163,29 +163,6 @@ def save_model(model, file_name):
     joblib.dump(model, file_name)
 
 # Прогноз для новой школы
-new_school_file_path = 'school_msk2_test.geojson'
-new_school_gdf = gpd.read_file(new_school_file_path)
-new_school_gdf = compute_geometric_features(new_school_gdf)
-X_new = new_school_gdf[features]
-
-predicted_capacity = ensemble_model.predict(X_new)
-new_school_gdf['predicted_rgisCAPACITY'] = predicted_capacity
-
-print(new_school_gdf[['predicted_rgisCAPACITY']])
-
-new_school_output_file_path = 'school_msk_test_with_prediction.geojson'
-new_school_gdf.to_file(new_school_output_file_path, driver='GeoJSON')
-
-# Визуализация результатов
-plt.figure(figsize=(8, 6))
-plt.scatter(y_test, ensemble_y_pred, alpha=0.6)
-plt.plot([y_test.min(), y_test.max()], [y_test.min(), y_test.max()], color='red', linestyle='--')
-plt.title("Проектная мощность школ тестовой выборки")
-plt.xlabel("Реальная проектная мощность")
-plt.ylabel("Рассчитанная проектная мощность")
-plt.show()
-
-# Прогноз для новой школы
 new_school_file_path = 'schools_test.geojson'
 new_school_gdf = gpd.read_file(new_school_file_path)
 new_school_gdf = compute_geometric_features(new_school_gdf)
