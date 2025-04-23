@@ -1,8 +1,20 @@
-numpy==1.26.4
-pandas==2.2.3
-geopandas==0.14.4
-blocksnet==0.0.12
-iduedu==0.1.2
-shapely==2.0.1
-osmnx==1.9.4
-matplotlib==3.7.1
+!pip install scikit-learn==1.2.2
+!pip install catboost
+!pip install optuna
+!pip install numpy==1.23.5
+
+import geopandas as gpd
+import pandas as pd
+import numpy as np
+from shapely.geometry import Point, Polygon
+import matplotlib.pyplot as plt
+import seaborn as sns
+from sklearn.model_selection import train_test_split, cross_val_score
+from sklearn.metrics import mean_squared_error
+from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, VotingRegressor
+from xgboost import XGBRegressor
+import lightgbm as lgb
+from catboost import CatBoostRegressor
+import shap
+import joblib
+import optuna
