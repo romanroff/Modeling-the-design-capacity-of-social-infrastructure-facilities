@@ -117,6 +117,8 @@
 Пример рассчитанных данных:
 ![screenshot_before](docs/Проектная мощность тестовой выборки (Москва).png)
 ![screenshot_before](docs/Точность расчёта проектной мощности тестовой выборки школ СПб и Мск.png)
+![Результаты](docs/project_capacity_moscow.png)
+![Точность](docs/accuracy_spb_moscow.png)
 
 ## Структура репозитория
 - **Jupyter Notebook**: основной файл с кодом для выполнения анализа.
